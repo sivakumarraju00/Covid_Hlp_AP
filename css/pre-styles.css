@@ -1,0 +1,317 @@
+.flex-cc {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.col {
+    flex-flow: column nowrap;
+}
+
+
+/**** Main Header * END *****************/
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.guidelines h2 {
+    margin: 24px 0;
+    color: black;
+    background-color: var(--blue-crayola);
+    font-size: 32px;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    font-family: "Work Sans", sans-serif;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 8px;
+    text-align: center;
+}
+
+table td a.flex-cc {
+    align-items: center;
+    text-decoration: none;
+}
+
+table td a .icon {
+    margin-left: 3px;
+    font-size: 16px;
+}
+
+.sources.flex-cc {
+    margin-top: 8px;
+    padding: 4px;
+    background-color: var(--med-champagne);
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sources .icon {
+    margin-right: 4px;
+    font-size: 20px;
+}
+
+.sources a {
+    margin-left: 6px;
+}
+
+.awareness.flex-cc {
+    margin: 24px 0;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.awareness h2 {
+    font-size: 20px;
+    color: black;
+    background-color: var(--blue-crayola);
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+}
+
+.awareness label {
+    align-items: center;
+}
+
+.awareness select {
+    width: 140px;
+    padding: 10px;
+    margin-left: 8px;
+    border: none;
+    background-color: #4e80ff;
+    font-size: 18px;
+}
+
+.imgs_pre {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.img_pre {
+    width: 23%;
+    margin: 4px auto;
+    padding: 2px;
+    border: 3px solid transparent;
+    display: flex;
+    align-items: center;
+}
+
+.img_pre:hover {
+    border-color: var(--blue-crayola);
+    transform: scale(1.02);
+}
+
+.img_pre img {
+    width: 100%;
+}
+
+
+/************ Carousels **************/
+
+.carouselSect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0);
+    transform: scale(0);
+    transition: transform 120ms ease-in-out, background-color 120ms ease-in-out;
+    align-items: center;
+    z-index: 3;
+}
+
+.carouselSect.open {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1);
+}
+
+.imgWrapper {
+    overflow: hidden;
+    align-items: stretch;
+    width: calc(100vw - 160px);
+    height: 100vh;
+}
+
+.imgWrapper>div {
+    width: calc( 12 * 92vw);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.imgWrapper>div .img_wrap {
+    max-height: calc( 100vh - 32px);
+    width: calc( 100vw - 160px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgWrapper>div .img_wrap:hover {
+    transform: none;
+    border-color: transparent;
+}
+
+.imgWrapper>div .img_wrap img {
+    max-height: calc( 100vh - 32px);
+    max-width: calc( 100vw - 160px);
+}
+
+.cNavLink {
+    cursor: pointer;
+    user-select: none;
+    height: 50%;
+    width: 80px;
+    padding: 0;
+    color: white;
+    border: 3px solid transparent;
+    flex: 2 1 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.cNavLink:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.cNavLink:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.cNavLink:active {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.cNavLink:disabled {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.cNavLink:disabled:hover {
+    background-color: transparent;
+}
+
+.cNavLink:disabled:active {
+    background-color: transparent;
+}
+
+.cNavLink .cNavIcon {
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeCarouselBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    color: white;
+    border: 3px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.closeCarouselBtn:hover {
+    background-color: rgb(140, 0, 0);
+}
+
+.closeCarouselBtn:focus {
+    outline: none;
+    border-color: rgb(210, 0, 0);
+}
+
+.closeCarouselBtn:active {
+    background-color: rgb(210, 0, 0);
+}
+
+
+/****** Media Queries ***************/
+
+@media (max-width: 900px) {
+    /****** Pre-only ***************/
+    .awareness h2 {
+        font-size: 20px;
+        padding: 10px 10px;
+    }
+    .img_pre {
+        width: 30%;
+    }
+    /****** Pre-only ***************/
+}
+
+@media (max-width: 600px) {
+    /****** Pre-only ***************/
+    body {
+        font-size: 16px;
+    }
+    .guidelines h2 {
+        font-size: 24px;
+    }
+    .awareness h2,
+    .awareness select {
+        font-size: 18px;
+    }
+    .img_pre {
+        width: 48%;
+    }
+    /******** Carousel *************/
+    .imgWrapper {
+        width: calc(100vw - 100px);
+    }
+    .imgWrapper>div {
+        width: calc( 12 * 92vw);
+    }
+    .imgWrapper>div .img_wrap {
+        width: calc( 100vw - 100px);
+    }
+    .imgWrapper>div .img_wrap img {
+        max-width: calc( 100vw - 100px);
+    }
+    .cNavLink {
+        width: 50px;
+    }
+    .cNavLink .cNavIcon {
+        font-size: 28px;
+    }
+}
+
+
+/****** Pre-Only ******************/
+
+@media (max-width: 440px) {
+    body {
+        font-size: 12px;
+    }
+    .guidelines h2 {
+        font-size: 20px;
+    }
+    .awareness h2 {
+        font-size: 16px;
+    }
+    .awareness select {
+        width: 100px;
+        font-size: 14px;
+    }
+    /***** Carousel *********/
+    .cNavLink .cNavIcon {
+        font-size: 24px;
+    }
+}
